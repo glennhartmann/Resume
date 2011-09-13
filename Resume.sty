@@ -16,18 +16,6 @@
 %     TEMPLATE DEFINITIONS     %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\header}[5]{
-	\begin{center}
-		\begin{Large}\textbf{#1}\end{Large} \\
-		#2 \\
-	\end{center}
-	\begin{tabular}{l l l}
-		\begin{tabular}{l}#3\end{tabular} & \begin{tabular}{l}#4\end{tabular}  & \begin{tabular}{l}#5\end{tabular} \\
-		\\
-		\hline
-	\end{tabular}
-}
-
 \newcommand{\sectiontitle}[1]{\textbf{\textsc{#1}}}
 
 \newcommand{\subtitle}[3]{\begin{bf}#1, \end{bf}#2, #3}
@@ -41,3 +29,4 @@
 %redefine itemize to have -4pt space between bullets
 \let \orig@Itemize =\itemize
 \renewenvironment{itemize}{\orig@Itemize \itemsep -4pt}{\endlist}
+
