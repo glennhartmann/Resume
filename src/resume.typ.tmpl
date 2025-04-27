@@ -1,0 +1,36 @@
+{{- define "section begin" }}== {{ .header }}{{ end -}}
+{{- define "section end" }}{{ end -}}
+
+{{- define "subheader" }}#style.subheader[{{ . }}]{{ end -}}
+
+{{- define "post header pre bullets" }}{{ end -}}
+
+{{- define "bullets begin" }}{{ end -}}
+{{- define "bullets end" }}{{ end -}}
+
+{{- define "list item begin" }}- {{ end -}}
+{{- define "list item" }}{{ if .url }}#link("{{ .url }}")[{{ end }}{{ .text }}{{ if .url }}]{{ end }}{{ end -}}
+{{- define "list item end" }}{{ end -}}
+
+{{- define "subsection begin" }}#style.subsection[{{ .title }}][{{ if .company }}{{ .company }}{{ end}}{{ if .school }}{{ .program}}, {{ .school }}{{ end }}, {{ .location }}, {{ .start_date }} -- {{ .end_date }}]{{ end -}}
+{{- define "subsection end" }}{{ end -}}
+
+{{- define "indented begin" }}#style.indent[{{ end -}}
+{{- define "indented end" }}]{{ end -}}
+
+{{- define "indented subheader" }}#style.subheader[Relevant Assignments:]
+{{ end -}}
+
+{{- define "indented subsection begin" }}#style.subsection[{{ .title }}][{{ .course}}, {{ .start_date }} -- {{ .end_date }}]{{ end -}}
+{{- define "indented subsection end" }}{{ end -}}
+
+
+#import("/src/style.typ") as style
+
+#show: style.style.with(
+  [Glenn Hartmann - Resume],
+  "Glenn Hartmann",
+  style.fancyHeader("Glenn Hartmann", "{{ .address }}", "{{ .phone }}", "{{ .email }}"),
+)
+
+{{ template "main template" . }}

@@ -1,0 +1,75 @@
+{{- define "section begin" }}\begin{section}{{ "{" }}{{ .header }}}{{ if .subsections }} \\{{ end }}{{ end -}}
+{{- define "section end" }}\end{section}{{ end -}}
+
+{{- define "subheader" }}\begin{bf}{{ . }}\end{bf}{{ end -}}
+
+{{- define "post header pre bullets" }}{{ end -}}
+
+{{- define "bullets begin" }}\begin{itemize}{{ end -}}
+{{- define "bullets end" }}\end{itemize}{{ end -}}
+
+{{- define "list item begin" }}\item {{ end -}}
+{{- define "list item" }}{{ if .url }}\href{{ "{" }}{{ .url }}}{{ "{" }}{{ end }}{{ .text }}{{ if .url }}}{{ end }}{{ end -}}
+{{- define "list item end" }}{{ end -}}
+
+{{- define "subsection begin" }}\begin{subsection}{{ "{" }}{{ .title }}}{{ "{" }}{{ if .company }}{{ .company }}{{ end}}{{ if .school }}{{ .program}}, {{ .school }}{{ end }}, {{ .location }}}{{ "{" }}{{ .start_date }} -- {{ .end_date }}}{{ end -}}
+{{- define "subsection end" }}\end{subsection}{{ end -}}
+
+{{- define "indented begin" }}\begin{indent}{{ end -}}
+{{- define "indented end" }}\end{indent}{{ end -}}
+
+{{- define "indented subheader" }}\begin{bf}Relevant Assignments:\end{bf} \\{{ end -}}
+
+{{- define "indented subsection begin" }}\begin{subsection}{{ "{" }}{{ .title }}}{{ "{" }}{{ .course}}}{{ "{" }}{{ .start_date }} -- {{ .end_date }}}{{ end -}}
+{{- define "indented subsection end" }}\end{subsection}{{ end -}}
+
+
+\documentclass[11pt]{article}
+\usepackage{src/ft_resume}
+\usepackage{src/resume}
+\usepackage{times}
+\usepackage{hyperref}
+
+\hypersetup{
+    colorlinks=true,
+    anchorcolor=blue,
+    citecolor=blue,
+    linkcolor=blue,
+    filecolor=blue,
+    urlcolor=blue,
+    pdftitle={Glenn Hartmann - Resume},
+}
+\urlstyle{same}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%     HEADER/FOOTER     %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{
+    \header{Glenn Hartmann}{
+        {{ .address }}
+    }{
+        {{ .phone }} \quad \quad \quad \quad
+    }{
+        {{ .email }}
+    }
+}
+%\headheight 10em
+\headheight 1in
+\textheight 7in
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%%%%%%%%%%%%%%%%%%%%
+%     DOCUMENT     %
+%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+{{ template "main template" . }}
+
+\end{document}

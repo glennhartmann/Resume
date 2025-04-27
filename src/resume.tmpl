@@ -1,0 +1,42 @@
+{{ define "bullets" }}
+    {{ template "bullets begin" }}
+    {{ range . -}}
+        {{ template "list item begin" }}{{ range . }}{{ template "list item" . }}{{ end }}{{ template "list item end" }}
+    {{ end }}
+    {{- template "bullets end" }}
+{{ end }}
+
+{{ define "main template" }}
+    {{ range .sections -}}
+        {{ template "section begin" . }}
+        {{ with .subheader }}
+            {{ template "subheader" . }}
+        {{ end }}
+        {{ template "post header pre bullets" }}
+        {{ with .bullets }}
+            {{ template "bullets" . }}
+        {{ end }}
+        {{ with .subsections }}
+            {{ range . -}}
+                {{ template "subsection begin" .header }}
+                {{ with .bullets }}
+                    {{ template "bullets" . }}
+                {{ end }}
+                {{ with .indented }}
+                    {{ template "indented begin" }}
+                    {{ template "indented subheader" .subheader }}
+                        {{ range .subsections -}}
+                            {{ template "indented subsection begin" .header }}
+                            {{ with .bullets }}
+                                {{ template "bullets" . }}
+                            {{ end }}
+                            {{ template "indented subsection end" }}
+                        {{ end }}
+                    {{ template "indented end" }}
+                {{ end }}
+                {{ template "subsection end" }}
+            {{ end }}
+        {{ end }}
+        {{ template "section end" }}
+    {{ end }}
+{{ end }}

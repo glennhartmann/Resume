@@ -1,3 +1,7 @@
 *.log
 *.aux
-*.pdf
+*.out
+/src/template
+/src/template.exe
+/result
+/tmp/

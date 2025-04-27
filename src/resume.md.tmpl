@@ -1,0 +1,48 @@
+{{- define "section begin" }}### {{ .header }}{{ end -}}
+{{- define "section end" }}{{ end -}}
+
+{{- define "subheader" }}**{{ . }}**{{ end -}}
+
+{{- define "post header pre bullets" }}{{ end -}}
+
+{{- define "bullets begin" }}{{ end -}}
+{{- define "bullets end" }}{{ end -}}
+
+{{- define "list item begin" }}* {{ end -}}
+{{- define "list item" }}{{ if .url }}[{{ end }}{{ .text }}{{ if .url }}]({{ .url }}){{ end }}{{ end -}}
+{{- define "list item end" }}{{ end -}}
+
+{{- define "subsection begin" }}**{{ .title }},** {{ if .company }}{{ .company }}{{ end}}{{ if .school }}{{ .program}}, {{ .school }}{{ end }}, {{ .location }}, {{ .start_date }} - {{ .end_date }}{{ end -}}
+{{- define "subsection end" }}{{ end -}}
+
+{{- define "indented begin" }}<div style="margin-left: 0.5in;">
+{{ end -}}
+{{- define "indented end" }}</div>{{ end -}}
+
+{{- define "indented subheader" }}**{{ . }}**
+{{ end -}}
+
+{{- define "indented subsection begin" }}**{{ .title }},** {{ .course }}, {{ .start_date }} - {{ .end_date }}{{ end -}}
+{{- define "indented subsection end" }}{{ end -}}
+
+
+<body style="font-family: 'Times New Roman', Times, serif; font-size:11pt;">
+<h1 style="font-size: 16pt; text-align: center; font-weight: bold;">{{ .name }}</h1>
+<div style="text-align: center;">
+<table style="width: 100%; display: table; border-collapse: separate;">
+<tr>
+<td style="padding-top: 0px; padding-right: 10px; padding-bottom: 0px; padding-left: 10px; font-size: 11pt; text-align: left; width: 35%;">{{ .address }}</td>
+<td style="padding-top: 0px; padding-right: 10px; padding-bottom: 0px; padding-left: 10px; font-size: 11pt; text-align: center; width: 30%;">{{ .phone }}</td>
+<td style="padding-top: 0px; padding-right: 10px; padding-bottom: 0px; padding-left: 10px; font-size: 11pt; text-align: right; width: 35%;">{{ .email }}</td>
+</tr>
+</table>
+</div>
+<p>
+
+---
+
+<p>
+
+{{ template "main template" . }}
+
+</body>

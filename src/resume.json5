@@ -1,0 +1,186 @@
+{
+    name: "Glenn Hartmann",
+    address: "[address]",
+    phone: "[phone]",
+    email: "[email]",
+    sections: [
+        {
+            header: "Skills Summary",
+            bullets: [
+                [{text: "Extensive familiarity with C++ and C through professional, academic, and independent study"}],
+                [{text: "Proficient with Python, C#, Java, and Ajax"}],
+                [{text: "Experience with C++ Script and GUI scripting"}],
+                [{text: "Enthusiastic, passionate, and driven"}],
+                [{text: "Eager to learn new material"}],
+                [{text: "Excellent communication and inter-personal skills"}],
+            ],
+        },
+        {
+            header: "Activities & Interests",
+            subheader: "Active Involvement in personal programming projects",
+            bullets: [
+                [
+                    {text: "Release open-source projects on "},
+                    {text: "http://ghindustries.webs.com/", url: "http://ghindustries.webs.com/"},
+                    {text: ", including encryption related applications, a Sudoku game, and an in-progress chess engine"},
+                ],
+                [
+                    {text: "Mobile developer for social address book website "},
+                    {text: "http://knok.me/", url: "http://knok.me/"},
+                ],
+                [{text: "Participate in projects on GitHub, SourceForge, and Google Code"}],
+                [{text: "Have participated in several programming contests including Google Code Jam and Google AI Challenge"}],
+                [{text: "Enjoy writing programs for fun"}],
+            ],
+        },
+        {
+            header: "Work Experience",
+            subsections: [
+                {
+                    header: {
+                        title: "Software Engineering Intern",
+                        company: "Google",
+                        location: "Mountain View, California",
+                        start_date: "September 2011",
+                        end_date: "present",
+                    },
+                    bullets: [
+                        [{text: "Working on the Research team"}],
+                        [{text: "Contributing to Video Content Analysis"}],
+                    ],
+                },
+                {
+                    header: {
+                        title: "Game Portability Developer - Core R&D",
+                        company: "TransGaming Technologies Inc",
+                        location: "Toronto, Ontario",
+                        start_date: "January",
+                        end_date: "April 2011",
+                    },
+                    bullets: [
+                        [{text: "Developed strict ANSI C peer-reviewed code, and reviewed others' code"}],
+                        [{text: "Re-implemented DirectX API functions for TransGaming's WineX"}],
+                        [{text: "Worked responsibly and independently on both Linux and Windows code"}],
+                        [{text: "Implemented various 3D Mesh related functions and features"}],
+                    ],
+                },
+                {
+                    header: {
+                        title: "BlackBerry Internet Service Software Developer",
+                        company: "Research In Motion Limited",
+                        location: "Waterloo, Ontario",
+                        start_date: "May",
+                        end_date: "August 2010",
+                    },
+                    bullets: [
+                        [{text: "Wrote and maintained BlackBerry Internet Service tools in C++"}],
+                        [{text: "Developed networking tools using ACE library"}],
+                        [{text: "Worked extensively on unit testing framework in Python"}],
+                        [{text: "Developed modular, extensible, reusable code"}],
+                    ],
+                },
+                {
+                    header: {
+                        title: "SlipStream Software Test/Tools Developer",
+                        company: "Research In Motion Limited",
+                        location: "Waterloo, Ontario",
+                        start_date: "September",
+                        end_date: "December 2009",
+                    },
+                    bullets: [
+                        [{text: "Performed BlackBerry browser performance testing and profiling"}],
+                        [{text: "Wrote and contributed to testing tools in VBA and C++, and provided documentation for said tools"}],
+                        [{text: "Tested various BlackBerry software systems"}],
+                    ],
+                },
+                {
+                    header: {
+                        title: "Application Developer",
+                        company: "Sun Life Financial",
+                        location: "Waterloo, Ontario",
+                        start_date: "January",
+                        end_date: "April 2009",
+                    },
+                    bullets: [
+                        [{text: "Developed functionality for the company intranet portal using ASP.NET, C# and Ajax"}],
+                        [{text: "Created dynamic and branded web sites using JavaScript and CSS"}],
+                        [{text: "Handled daily issues reported to the Website Support Inbox"}],
+                    ],
+                },
+                {
+                    header: {
+                        title: "Test Specialist",
+                        company: "Agfa Healthcare",
+                        location: "Waterloo, Ontario",
+                        start_date: "May",
+                        end_date: "August 2008",
+                    },
+                    bullets: [
+                        [{text: "Designed and developed automated test procedures"}],
+                        [{text: "Created and executed reusable and maintainable automated scripts"}],
+                        [{text: "Followed development and testing standards and guidelines"}],
+                    ],
+                },
+            ],
+        },
+        {
+            header: "Education",
+            subsections: [
+                {
+                    header: {
+                        title: "Candidate for Bachelor of Computer Science",
+                        program: "Computer Science, Co-op Program",
+                        school: "University of Waterloo",
+                        location: "Waterloo, Ontario",
+                        start_date: "September 2007",
+                        end_date: "present",
+                    },
+                    indented: {
+                        subheader: "Relevant Assignments:",
+                        subsections: [
+                            {
+                                header: {
+                                    title: "Genetic Algorithm (In Progress)",
+                                    course: "Artificial Intelligence",
+                                    start_date: "May",
+                                    end_date: "August 2011",
+                                },
+                                bullets: [
+                                    [{text: "Implementing a solution to the Wordsnakes game"}],
+                                    [{text: "Using a combination of graph-searching with heuristics and a genetic algorithm"}],
+                                ],
+                            },
+                            {
+                                header: {
+                                    title: "Operating System",
+                                    course: "Operating Systems",
+                                    start_date: "January",
+                                    end_date: "April 2010",
+                                },
+                                bullets: [
+                                    [{text: "Implemented several core components of an operating system"}],
+                                    [{text: "Designed and developed virtual and physical memory management systems, and memory paging functionality"}],
+                                    [{text: "Implemented several standard system calls including fork and exec"}],
+                                    [{text: "Coordinated and organized efforts in a team of three"}],
+                                ],
+                            },
+                            {
+                                header: {
+                                    title: "Card Game Design",
+                                    course: "Software Abstraction and Specification",
+                                    start_date: "May",
+                                    end_date: "August 2009",
+                                },
+                                bullets: [
+                                    [{text: "Created a fully featured graphical Euchre game"}],
+                                    [{text: "Worked in a group of two, using Subversion to organize code"}],
+                                    [{text: "Programmed using C++ and the gtkmm graphics library"}],
+                                ],
+                            },
+                        ],
+                    },
+                },
+            ],
+        },
+    ],
+}

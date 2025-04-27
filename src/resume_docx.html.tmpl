@@ -1,0 +1,60 @@
+{{- define "section begin" }}<h3>{{ .header }}</h3>{{ end -}}
+{{- define "section end" }}<p>{{ end -}}
+
+{{- define "subheader" }}
+<p>
+<b>{{ . }}</b>
+{{ end -}}
+
+{{- define "post header pre bullets" }}<p>{{ end -}}
+
+{{- define "bullets begin" }}<ul class="list">{{ end -}}
+{{- define "bullets end" }}</ul>{{ end -}}
+
+{{- define "list item begin" }}<li>{{ end -}}
+{{- define "list item" }}{{ if .url }}<a href="{{ .url }}">{{ end }}{{ .text }}{{ if .url }}</a>{{ end }}{{ end -}}
+{{- define "list item end" }}</li>{{ end -}}
+
+{{- define "subsection begin" }}<b>{{ .title }}, </b>{{ if .company }}{{ .company }}{{ end}}{{ if .school }}{{ .program}}, {{ .school }}{{ end }}, {{ .location }}, {{ .start_date }} - {{ .end_date }}{{ end -}}
+{{- define "subsection end" }}{{ end -}}
+
+{{- define "indented begin" }}<span custom-style="indented">{{ end -}}
+{{- define "indented end" }}</span>{{ end -}}
+
+{{- define "indented subheader" }}
+<p>
+<b>{{ . }}</b>
+<p>
+{{ end -}}
+
+{{- define "indented subsection begin" }}<b>{{ .title }}, </b>{{ .course }}, {{ .start_date }} - {{ .end_date }}{{ end -}}
+{{- define "indented subsection end" }}{{ end -}}
+
+
+<!DOCTYPE html>
+<html>
+
+    <body>
+
+        <h1>{{ .name }}</h1>
+        <table>
+            <tr>
+                <td>{{ .address }}</td>
+                <td>{{ .phone }}</td>
+                <td>{{ .email }}</td>
+            </tr>
+        </table>
+
+        <div custom-style="tiny">.</div>
+
+        <p>
+
+        <hr />
+
+        <p>
+
+        {{ template "main template" . }}
+
+    </body>
+
+</html>

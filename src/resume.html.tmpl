@@ -1,0 +1,142 @@
+{{- define "section begin" }}<div class="header">{{ .header }}</div>{{ end -}}
+{{- define "section end" }}<p>{{ end -}}
+
+{{- define "subheader" }}
+<p>
+<span class="subheader_A">{{ . }}</span>
+{{ end -}}
+
+{{- define "post header pre bullets" }}<p>{{ end -}}
+
+{{- define "bullets begin" }}<ul class="list">{{ end -}}
+{{- define "bullets end" }}</ul>{{ end -}}
+
+{{- define "list item begin" }}<li>{{ end -}}
+{{- define "list item" }}{{ if .url }}<a href="{{ .url }}">{{ end }}{{ .text }}{{ if .url }}</a>{{ end }}{{ end -}}
+{{- define "list item end" }}</li>{{ end -}}
+
+{{- define "subsection begin" }}<span class="subheader_A">{{ .title }}, </span><span class="subheader_B">{{ if .company }}{{ .company }}{{ end}}{{ if .school }}{{ .program}}, {{ .school }}{{ end }}, {{ .location }}, {{ .start_date }} - {{ .end_date }}</span>{{ end -}}
+{{- define "subsection end" }}{{ end -}}
+
+{{- define "indented begin" }}<div class="indented">{{ end -}}
+{{- define "indented end" }}</div>{{ end -}}
+
+{{- define "indented subheader" }}
+<p>
+<div class="subheader_A"><p>{{ . }}</p></div>
+{{ end -}}
+
+{{- define "indented subsection begin" }}<span class="subheader_A">{{ .title }}, </span><span class="subheader_B">{{ .course }}, {{ .start_date }} - {{ .end_date }}</span>{{ end -}}
+{{- define "indented subsection end" }}{{ end -}}
+
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>{{ .name }} - Resume</title>
+        <style type="text/css">
+            body {
+                font-family: "Times New Roman", Times, serif;
+                font-size: 11pt;
+            }
+
+            A:link {
+                text-decoration: none;
+            }
+
+            A:visited {
+                text-decoration: none;
+            }
+
+            A:active {
+                text-decoration: none;
+            }
+
+            A:hover {
+                text-decoration: underline; color: red;
+            }
+
+            #name {
+                font-size: 16pt;
+                text-align: center;
+                font-weight: bold;
+            }
+
+            #tagline {
+                text-align: center;
+            }
+
+            #contact {
+                width: 100%;
+            }
+
+            #contact td {
+                padding-top: 0px;
+                padding-right: 10px;
+                padding-bottom: 0px;
+                padding-left: 10px;
+                font-size: 11pt;
+            }
+
+            #contact_headers {
+                font-weight: bold;
+            }
+
+            #center_table_d {
+                text-align: center;
+            }
+
+            .left_contact_column {
+                text-align: left;
+                width: 35%;
+            }
+
+            .center_contact_column {
+                text-align: center;
+                width: 30%;
+            }
+
+            .right_contact_column {
+                width: 35%;
+                text-align: right;
+            }
+
+            .header {
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+
+            .subheader_A {
+                font-weight: bold;
+            }
+
+            .indented {
+                margin-left: 0.5in;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div id="name">{{ .name }}</div>
+        <div id="center_table_d">
+            <table id="contact">
+                <tr>
+                    <td class="left_contact_column">{{ .address }}</td>
+                    <td class="center_contact_column">{{ .phone }}</td>
+                    <td class="right_contact_column">{{ .email }}</td>
+                </tr>
+            </table>
+        </div>
+        <p>
+
+        <hr />
+
+        <p>
+
+        {{ template "main template" . }}
+
+    </body>
+
+</html>
